@@ -1,0 +1,36 @@
+@import "src/styles/variables";
+
+.nav {
+  height: 164px;
+  max-width: 100vw;
+  background-color: $primary-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  @media (min-width: $md) {
+    flex-direction: row;
+  }
+  img {
+    width: 164px;
+    height: 54px;
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+
+    li {
+      a {
+        display: block;
+        text-decoration: none;
+        padding: 15px;
+        font-size: 20px;
+        font-weight: bold;
+        color: $secondary-color;
+      }
+    }
+  }
+}

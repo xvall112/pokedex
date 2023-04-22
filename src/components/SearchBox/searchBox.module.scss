@@ -1,0 +1,33 @@
+@import "src/styles/variables.scss";
+.container {
+  display: flex;
+  justify-content: center;
+}
+.searchBox {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 30px;
+  max-width: 812px;
+  background: $secondary-color 0% 0% no-repeat padding-box;
+  border-radius: $border-radius;
+  opacity: 1;
+
+  input {
+    margin: 0 20px;
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    font-size: 20px;
+    color: $secondary-color-dark;
+  }
+}
+.icon {
+  width: 28px;
+  height: 28px;
+  color: $secondary-color-dark;
+}
+::placeholder {
+  color: $secondary-color-dark;
+}

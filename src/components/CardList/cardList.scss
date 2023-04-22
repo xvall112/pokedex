@@ -1,0 +1,25 @@
+@import "src/styles/variables";
+.cardList {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  @media (min-width: $md) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.notFoundContainer {
+  display: flex;
+  justify-content: center;
+  .notFound {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid $font-color-primary;
+    color: $font-color-primary;
+    padding: 10px 20px;
+    max-width: 800px;
+    border-radius: $border-radius;
+  }
+}

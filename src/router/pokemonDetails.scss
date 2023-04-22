@@ -1,0 +1,41 @@
+@import "src/styles/variables.scss";
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  height: auto;
+  background-color: $secondary-color;
+  @media (min-width: $md) {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .profile {
+    font-size: 40px;
+    border: 2px solid $border-color;
+    border-radius: 8px;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .name {
+      font-size: 40px;
+      color: $primary-color;
+      font-weight: bold;
+      text-align: center;
+      margin: 30px 0px;
+    }
+    img {
+      min-height: 300px;
+      max-width: 300px;
+      margin: 50px;
+    }
+  }
+}
+.backButton {
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+  color: $font-color-primary;
+  display: flex;
+  gap: 20px;
+}

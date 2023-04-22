@@ -1,0 +1,15 @@
+body {
+  font-family: "Sofia Pro, Regular";
+  background-color: #dff3fb;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}

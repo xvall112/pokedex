@@ -1,0 +1,76 @@
+@import "src/styles/variables";
+.allVisibleBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .allVisibleIcon {
+    position: relative;
+    background: #dff3fb;
+    top: 10px;
+    color: #07b330;
+    font-size: 24px;
+  }
+
+  .allVisible {
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 0px;
+    color: $font-color-primary;
+    padding: 14px 30px;
+    border: 1px solid $secondary-color-dark;
+    border-radius: $border-radius;
+    width: 300px;
+    display: inline-block;
+  }
+
+  .allVisibleBack {
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 0px;
+    color: $primary-color;
+    display: inline-block;
+    text-decoration: underline;
+    margin-top: 10px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+  padding: 0px;
+  max-width: 100vw;
+
+  li {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  a {
+    color: $secondary-color-dark;
+    padding: 10px;
+    margin: 5px;
+    @media (min-width: 768px) {
+      padding: 14px 21px;
+    }
+  }
+  .activePagination {
+    color: $font-color-primary !important;
+    border: 2px solid $font-color-primary;
+    border-radius: $border-radius;
+  }
+
+  .nextPrevLink {
+    color: $secondary-color-dark !important;
+    border: 1px solid $secondary-color-dark;
+    border-radius: $border-radius;
+  }
+
+  .disabledPrevNext {
+    opacity: 0.3;
+  }
+}
