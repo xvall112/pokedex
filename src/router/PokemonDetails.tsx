@@ -1,11 +1,14 @@
 import React, { useContext } from "react";
 import { useQuery } from "@apollo/client";
 import { useNavigate, useParams } from "react-router-dom";
+import { AppContext } from "../context/AppContext";
+//graphql
 import { GET_POKEMON_DETAILS_BY_ID } from "../graphql/queries";
+//components
 import { MdArrowBackIosNew } from "react-icons/md";
 import Container from "../components/Container/Container";
 import Tabs from "../components/Tabs/Tabs";
-import { AppContext } from "../context/AppContext";
+//css
 import "./pokemonDetails.scss";
 
 const PokemonDetails = () => {
@@ -16,7 +19,7 @@ const PokemonDetails = () => {
     variables: { id },
   });
 
-  if (loading) return <p>Loading</p>;
+  if (loading) return <Container>Loading</Container>;
 
   const {
     pokemon_v2_pokemon_by_pk: {

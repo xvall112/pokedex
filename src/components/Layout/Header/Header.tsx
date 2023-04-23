@@ -1,11 +1,11 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import style from "./Header.module.scss";
+import styles from "./Header.module.scss";
 import logo from "../../../assets/Pokedex_logo.png";
 const Header = () => {
   return (
     <>
-      <nav className={style.nav}>
+      <nav className={styles.nav}>
         <Link to={`/`}>
           <img src={logo} alt="logo" />
         </Link>

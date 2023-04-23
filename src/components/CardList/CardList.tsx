@@ -3,7 +3,7 @@ import { AppContext } from "../../context/AppContext";
 import { useQuery } from "@apollo/client";
 import { GET_POKEMON_FIRST_GENERATION } from "../../graphql/queries";
 import Card from "../Card/Card";
-import "./cardList.scss";
+import styles from "./cardList.module.scss";
 import Container from "../../components/Container/Container";
 
 interface Pokemon {
@@ -12,12 +12,14 @@ interface Pokemon {
 }
 
 const CardList = () => {
-  const { setAllPagesCount, offset, limit, input } = useContext(AppContext);
-  //pagination limit per page
+  const { offset, limit, input } = useContext(AppContext);
+
+  //trim and lowercase input
+  const searchInput = input.trim().toLowerCase();
 
   //query pokemon generation-i limit, offset, search
   const { loading, data } = useQuery(GET_POKEMON_FIRST_GENERATION, {
-    variables: { limit: limit, offset: offset, searchInput: input },
+    variables: { limit: limit, offset: offset, searchInput: searchInput },
   });
 
   //loading
@@ -28,21 +30,18 @@ const CardList = () => {
       </Container>
     );
 
-  const { pokemon_gen1, generation_count } = data;
-
-  setAllPagesCount(generation_count.aggregate.count);
-
+  const { pokemon_gen1 } = data;
   //no results
   if (pokemon_gen1.length === 0)
     return (
-      <div className="notFoundContainer">
-        <span className="notFound">Pokémon nenalezen</span>
+      <div className={styles.notFoundContainer}>
+        <span className={styles.notFound}>Pokémon nenalezen</span>
       </div>
     );
 
   return (
     <>
-      <div className="cardList">
+      <div className={styles.cardList}>
         {pokemon_gen1 &&
           pokemon_gen1.map((pokemon: Pokemon) => {
             const { name, id } = pokemon;

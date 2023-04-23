@@ -1,6 +1,8 @@
+@import "src/styles/variables";
+
 body {
   font-family: "Sofia Pro, Regular";
-  background-color: #dff3fb;
+  background-color: $background-color;
   height: 100vh;
 }
 

@@ -14,7 +14,12 @@ export const GET_POKEMON_FIRST_GENERATION = gql`
       name
       id
     }
-    generation_count: pokemon_v2_pokemonspecies_aggregate(
+  }
+`;
+
+export const GET_COUNT_POKEMON = gql`
+  query getCountPokemon($searchInput: String!) {
+    pokemon_v2_pokemonspecies_aggregate(
       where: {
         pokemon_v2_generation: { name: { _eq: "generation-i" } }
         name: { _regex: $searchInput }

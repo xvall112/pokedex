@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import style from "./searchBox.module.scss";
 import { AppContext } from "../../context/AppContext";
 import { AiOutlineSearch } from "react-icons/ai";
+import style from "./searchBox.module.scss";
 
 const SearchInput = () => {
-  const { setInputHandler, input }: any = useContext(AppContext);
+  const { setInputHandler, input } = useContext(AppContext);
   return (
     <div className={style.container}>
       <div className={style.searchBox}>

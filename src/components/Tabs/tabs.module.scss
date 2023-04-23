@@ -2,7 +2,7 @@
 
 .tabs {
   display: flex;
-  height: 600px;
+  height: 700px;
   float: none;
   list-style: none;
   position: relative;
@@ -12,6 +12,7 @@
   top: 0px;
   @media (min-width: $md) {
     top: -50px;
+    height: 600px;
   }
   li {
     float: left;
@@ -39,7 +40,7 @@
       background: $secondary-color;
     }
   }
-  .tab-content {
+  .tabContent {
     z-index: 2;
     display: none;
     overflow: hidden;
